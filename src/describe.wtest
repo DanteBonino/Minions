@@ -1,0 +1,28 @@
+import Empleado.*
+import Comida.*
+
+const ciclope1 = new Ciclope(estamina = 100)
+const biclope1 = new Biclope(estamina = 10)
+
+describe "Punto 1" {
+
+	test "Un ciclope come una banana y aumenta 10 de estamina" {
+		ciclope1.comer(banana)
+		assert.equals(110, ciclope1.estamina())
+	}
+	
+	test "Un ciclope come una manzana y aumenta 5 de estamina" {
+		ciclope1.comer(manzana)
+		assert.equals(105, ciclope1.estamina())
+	}
+	
+	test "Un ciclope come una uva y aumenta 1 de estamina" {
+		ciclope1.comer(uva)
+		assert.equals(101, ciclope1.estamina())
+	}
+	
+	test "Un biclope come una manzana y no aumenta su estamina pq ya es 10" {
+		biclope1.comer(manzana)
+		assert.equals(10, biclope1.estamina())
+	}
+}
